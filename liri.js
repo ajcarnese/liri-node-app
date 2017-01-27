@@ -18,16 +18,24 @@ var client = new twitter({
 //this command should use the twitter package to show last 20 tweets and when they were posted
 if (demands == "my-tweets") {
 client.get('statuses/user_timeline', { screen_name: 'CodingCoconut', count: 20 }, function(error, tweets, response) {
-  if (!error) {
-    console.log(tweets);
+  	if (!error) {
+  		console.log("--Here are my last 20 tweets--")
+  		for (i=0; i < tweets.length; i++){
+    	console.log("*********************")
+  		console.log("Tweet #" + (i+1) + ":")
+    	console.log("This tweet is from: " + tweets[i].created_at) 
+    	console.log("This tweet says: " + tweets[i].text);
+    	console.log("*********************")
+  	}
+
   }else {
   	console.log("you did something wrong!")
   	console.log(error);
   }
 });
 }
-//currently, the twitter code produces a lot of object data.  
-//NEED TO FIGURE OUT HOW TO WHITTLE IT DOWN
+
+
 
 // // this command should use the spotify package to show the following information about the track listed after the demand:
 if (demands == "spotify-this-song"){
