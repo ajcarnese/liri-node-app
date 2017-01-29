@@ -20,8 +20,9 @@ function liri(){
 		client.get('statuses/user_timeline', { screen_name: 'CodingCoconut', count: 20 }, function(error, tweets, response) {
 	  	if (!error) {
 	  		console.log("--Here are my last 20 tweets--")
+	  		console.log("*********************")
+	  		console.log("(Starting with the most recent tweet)")
 	  		for (i=0; i < tweets.length; i++){
-	    	console.log("*********************")
 	  		console.log("Tweet #" + (i+1) + ":")
 	    	console.log("This tweet is from: " + tweets[i].created_at) 
 	    	console.log("This tweet says: " + tweets[i].text);
@@ -29,8 +30,7 @@ function liri(){
 	  	}
 
 	  }else {
-	  	console.log("Meow! (I think a cat ate your tweets...)")
-	  	console.log(error);
+	  	console.log("Meow! (I think a cat ate your tweets... )" + error)
 	  }
 	});
 	}
@@ -41,7 +41,7 @@ function liri(){
 
 			spotify.search({ type: 'track', query: track }, function(err, data) {
 		    if ( err ) {
-		        console.log('Error: ' + err);
+		        console.log('Something went wrong: ' + err);
 		        return;
 		    }
 		    
