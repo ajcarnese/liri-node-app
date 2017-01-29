@@ -6,18 +6,9 @@ function liri(){
 	var request = require('request');
 	var demands = process.argv[2];
 
-	var client = new twitter({
-	  consumer_key: 'p2Pc7TRrcc5wvLU82O8IrqSQt',
-	  consumer_secret: 'xOzVPUqFwXBmVVeDNrWAsI27lnzHD16jdLL71fO8WmswzRqF7c',
-	  access_token_key: '923816186-DS1ViXE0pYmmn36togE3YxjehUUu4OEvmVv4rmKT',
-	  access_token_secret: 'j3zy3ofgYxtcP548QN0TIZ5ahVMgnjVKaUPgXgEQqg0sf',
-
-	});
-
-
 	//this function should use the twitter package to show last 20 tweets and when they were posted
 	function tweetMe(){
-		client.get('statuses/user_timeline', { screen_name: 'CodingCoconut', count: 20 }, function(error, tweets, response) {
+		(twit.twitterKeys).get('statuses/user_timeline', { screen_name: 'CodingCoconut', count: 20 }, function(error, tweets, response) {
 	  	if (!error) {
 	  		console.log("--Here are my last 20 tweets--")
 	  		console.log("*********************")
