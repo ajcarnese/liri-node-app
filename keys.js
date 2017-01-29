@@ -1,4 +1,5 @@
 console.log('this is loaded');
+console.log("Welcome to LIRI!");
 
 exports.twitterKeys = {
   consumer_key: 'p2Pc7TRrcc5wvLU82O8IrqSQt',
